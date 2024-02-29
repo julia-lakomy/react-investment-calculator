@@ -6,8 +6,7 @@ export default function UserInput({ onChangeInput, userInput }) {
     duration: "DURATION",
   };
 
-
-return (
+  return (
     <section id="user-input">
       <div className="input-group">
         <p>
@@ -37,7 +36,7 @@ return (
             required
             value={userInput.annualInvestment}
             onChange={(event) =>
-                onChangeInput("annualInvestment", event.target.value)
+              onChangeInput("annualInvestment", event.target.value)
             }
           />
         </p>
@@ -53,7 +52,7 @@ return (
             required
             value={userInput.expectedReturn}
             onChange={(event) =>
-                onChangeInput("expectedReturn", event.target.value)
+              onChangeInput("expectedReturn", event.target.value)
             }
           />
         </p>
@@ -66,9 +65,7 @@ return (
             type="number"
             required
             value={userInput.duration}
-            onChange={(event) =>
-                onChangeInput("duration", event.target.value)
-            }
+            onChange={(event) => onChangeInput("duration", event.target.value)}
           />
         </p>
       </div>
