@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export default function UserInput() {
+export default function UserInput({ onChangeInput, userInput }) {
   const DICTIONARY = {
     initialInvestment: "INITIAL INVESTMENT",
     annualInvestment: "ANNUAL INVESTMENT",
@@ -8,24 +6,8 @@ export default function UserInput() {
     duration: "DURATION",
   };
 
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
-    duration: 0,
-  });
 
-  function handleInputChange(inputIdentifier, newValue) {
-    console.log(inputIdentifier, newValue);
-    setUserInput((prevUserInput) => {
-      return {
-        ...prevUserInput,
-        [inputIdentifier]: newValue,
-      };
-    });
-  }
-
-  return (
+return (
     <section id="user-input">
       <div className="input-group">
         <p>
@@ -39,7 +21,7 @@ export default function UserInput() {
             required
             value={userInput.initialInvestment}
             onChange={(event) =>
-              handleInputChange("initialInvestment", event.target.value)
+              onChangeInput("initialInvestment", event.target.value)
             }
           />
         </p>
@@ -55,7 +37,7 @@ export default function UserInput() {
             required
             value={userInput.annualInvestment}
             onChange={(event) =>
-              handleInputChange("annualInvestment", event.target.value)
+                onChangeInput("annualInvestment", event.target.value)
             }
           />
         </p>
@@ -71,7 +53,7 @@ export default function UserInput() {
             required
             value={userInput.expectedReturn}
             onChange={(event) =>
-              handleInputChange("expectedReturn", event.target.value)
+                onChangeInput("expectedReturn", event.target.value)
             }
           />
         </p>
@@ -85,7 +67,7 @@ export default function UserInput() {
             required
             value={userInput.duration}
             onChange={(event) =>
-              handleInputChange("duration", event.target.value)
+                onChangeInput("duration", event.target.value)
             }
           />
         </p>
